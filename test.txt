@@ -1,5 +1,5 @@
 a = 10
-b = 9
+b = 41
 
 for i = 1,9 do
 	print(i)
