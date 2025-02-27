@@ -1,4 +1,4 @@
-require("text_test")
+require("test")
 console.clear()
 
 AVATARS = {}
