@@ -167,10 +167,10 @@ local function wrapText(text, maxWidth)
 end
 
 while true do
-  RNG = math.random(2049)
-  RNG_R = math.random(0xFF)
-  RNG_G = math.random(0xFF)
-  RNG_B = math.random(0xFF)
+  RNG = math.random(27)
+  RNG_R = math.random(0x20,0xD0)
+  RNG_G = math.random(0x20,0xD0)
+  RNG_B = math.random(0x20,0xD0)
   RNG_RGB = RNG_R*0x10000+RNG_G*0x100+RNG_B
 
   gui.drawBox(0,0,320,600, "#00ff00", "#00ff00")
@@ -264,7 +264,7 @@ while true do
     --gui.drawBox(CHAT_X_OFFSET+3, yOffset, CHAT_X_OFFSET + CHAT_WIDTH, yOffset + chat.height + 1, "#FFFFFF", 0x80000000)
     --image + image position
     --gui.drawImage(getUserImage(chat.nick), CHAT_X_OFFSET - IMAGE_SIZE+2, yOffset+1)
-    gui.drawImageRegion(getUserImage(chat.nick), 0, 0, 40, 40, CHAT_X_OFFSET - IMAGE_SIZE+2, yOffset+1, 32, 32)
+    gui.drawImageRegion(getUserImage(chat.nick), 0, 0, 32, 32, CHAT_X_OFFSET - IMAGE_SIZE+2, yOffset+1, 32, 32)
     --username text
     gui.pixelText(CHAT_X_OFFSET+3, 1+yOffset, chat.nick .. ":", namecolor)
     yOffset = yOffset + NAME_HEIGHT
