@@ -264,7 +264,7 @@ while true do
     --gui.drawBox(CHAT_X_OFFSET+3, yOffset, CHAT_X_OFFSET + CHAT_WIDTH, yOffset + chat.height + 1, "#FFFFFF", 0x80000000)
     --image + image position
     --gui.drawImage(getUserImage(chat.nick), CHAT_X_OFFSET - IMAGE_SIZE+2, yOffset+1)
-    gui.drawImageRegion(getUserImage(chat.nick), 0, 0, 32, 32, CHAT_X_OFFSET - IMAGE_SIZE+2, yOffset+1, 32, 32)
+    gui.drawImageRegion(getUserImage(chat.nick), 0, 0, 40, 40, CHAT_X_OFFSET - IMAGE_SIZE+2, yOffset+1, 32, 32)
     --username text
     gui.pixelText(CHAT_X_OFFSET+3, 1+yOffset, chat.nick .. ":", namecolor)
     yOffset = yOffset + NAME_HEIGHT
