@@ -88,9 +88,8 @@ local function createUserFiles(username)
     end
   end
 
-  for k=1,#AVATARS do
-    ensureFileExists(avatarFile, AVATARS[k])
-  end
+    ensureFileExists(avatarFile, AVATARS[RNG])
+
   ensureFileExists(bgcolorFile, "#000000")
   ensureFileExists(namecolorFile, "#FFFFFF")
 end
@@ -103,9 +102,7 @@ local function getUserImage(username)
     file:close()
     return "images/avatar/" .. imageName .. ".png"
   end
-  for k=1,#AVATARS do
-    return "images/avatar/" .. AVATARS[k] .. ".png"
-  end
+    return "images/avatar/" .. AVATARS[RNG] .. ".png"
 end
 
 local function getUserBgColor(username)
@@ -163,6 +160,7 @@ local function wrapText(text, maxWidth)
 end
 
 while true do
+  RNG = math.random(2049)
   gui.drawBox(0,0,320,600, "#00ff00", "#00ff00")
   twitch_conn:settimeout(0.001)
   local data, status, partial = twitch_conn:receive("*l")
