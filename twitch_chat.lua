@@ -1,5 +1,5 @@
 console.clear()
-
+RNG = 0
 AVATARS = {}
 
 local function getFilesInFolder(folder)
