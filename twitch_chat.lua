@@ -1,5 +1,11 @@
 console.clear()
 RNG = 0
+
+RNG_R = 0
+RNG_G = 0
+RNG_B = 0
+RNG_RGB = 0
+
 AVATARS = {}
 
 local function getFilesInFolder(folder)
@@ -88,9 +94,10 @@ local function createUserFiles(username)
     end
   end
 
-    ensureFileExists(avatarFile, AVATARS[RNG])
+  ensureFileExists(avatarFile, AVATARS[RNG])
 
-  ensureFileExists(bgcolorFile, "#000000")
+  ensureFileExists(bgcolorFile, "#" .. bizstring.hex(RNG_RGB))
+
   ensureFileExists(namecolorFile, "#FFFFFF")
 end
 
@@ -113,7 +120,7 @@ local function getUserBgColor(username)
     file:close()
     return color
   end
-  return "#000000"
+  return "#" .. bizstring.hex(RNG_RGB)
 end
 
 local function getUserNameColor(username)
@@ -161,6 +168,11 @@ end
 
 while true do
   RNG = math.random(2049)
+  RNG_R = math.random(0xFF)
+  RNG_G = math.random(0xFF)
+  RNG_B = math.random(0xFF)
+  RNG_RGB = RNG_R*0x10000+RNG_G*0x100+RNG_B
+
   gui.drawBox(0,0,320,600, "#00ff00", "#00ff00")
   twitch_conn:settimeout(0.001)
   local data, status, partial = twitch_conn:receive("*l")
