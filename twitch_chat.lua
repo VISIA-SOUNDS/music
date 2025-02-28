@@ -101,7 +101,9 @@ local function getUserImage(username)
     file:close()
     return "images/avatar/" .. imageName .. ".png"
   end
-  return "images/avatar/" .. "placeholder.png"
+  for k=1,#AVATARS do
+    return "images/avatar/" .. AVATARS[k] .. ".png"
+  end
 end
 
 local function getUserBgColor(username)
