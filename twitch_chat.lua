@@ -29,9 +29,6 @@ getFilesInFolder("images/avatar") -- Call function on the "images/avatar" folder
 --end
 client.SetGameExtraPadding(0,0,0,51)
 local socket = require("socket.core")
-local twitch_username = "straybot_"
-local twitch_password = "oauth:e7lw0vtdy4s125rf7c1y6duji07v6c"
-local channel_name = "mang0"
 
 local twitch_conn = socket.tcp()
 twitch_conn:connect("irc.chat.twitch.tv", 6667)
