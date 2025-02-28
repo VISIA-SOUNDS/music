@@ -1,4 +1,3 @@
-require("test")
 console.clear()
 
 AVATARS = {}
@@ -28,7 +27,7 @@ getFilesInFolder("images/avatar") -- Call function on the "images/avatar" folder
 --for _, v in ipairs(AVATARS) do
 --    print('"' .. v .. '"')
 --end
-
+require("test")
 client.SetGameExtraPadding(0,0,0,51)
 local socket = require("socket.core")
 
