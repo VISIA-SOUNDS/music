@@ -87,8 +87,10 @@ local function createUserFiles(username)
       file:close()
     end
   end
-  
-  ensureFileExists(avatarFile, "placeholder")
+
+  for k=1,#AVATARS do
+    ensureFileExists(avatarFile, AVATARS[k])
+  end
   ensureFileExists(bgcolorFile, "#000000")
   ensureFileExists(namecolorFile, "#FFFFFF")
 end
@@ -101,7 +103,6 @@ local function getUserImage(username)
     file:close()
     return "images/avatar/" .. imageName .. ".png"
   end
-  for k=1,#AVATARS do
     return "images/avatar/" .. AVATARS[k] .. ".png"
   end
 end
